@@ -1,0 +1,54 @@
+<h1 style="text-align: center">Administración de autos</h1>
+<div class="container element-position">
+  <form [formGroup]="formAuto">
+    <div class="form-group">
+      <label>Modelo</label>
+      <input type="text" class="form-control" placeholder="Escriba el modelo" formControlName="Modelo">
+    </div>
+    <div class="form-group">
+      <label >Marca</label>
+      <input type="text" class="form-control"  placeholder="Escriba la marca" formControlName="Marca">
+    </div>
+    <div class="form-group">
+      <label >Transmisión</label>
+      <input type="text" class="form-control"  placeholder="Escriba la transmision" formControlName="Transmision">
+    </div>
+    <div class="form-group">
+      <label >Tipo</label>
+      <input type="text" class="form-control"  placeholder="Escriba el tipo de auto" formControlName="Tipo">
+    </div>
+    <div class="form-group">
+      <label >Puertas</label>
+      <input type="number" class="form-control"  placeholder="Escriba el numero de puertas" formControlName="Puertas">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addAuto()" *ngIf="btn">Agregar</button>
+    <button type="submit" class="btn btn-primary" (click)="updateAuto()" *ngIf="!btn">Modificar</button>
+  </form>
+<br>
+
+<h1 style="text-align: center">Autos</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Modelo</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Transmision</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Puertas</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let auto of autos">
+      <td>{{ auto.Modelo }}</td>
+      <td>{{ auto.Marca }}</td>
+      <td>{{ auto.Transmision }}</td>
+      <td>{{ auto.Tipo }}</td>
+      <td>{{ auto.Puertas }}</td>
+      <td><button type="button" class="btn btn-danger" (click)="deleteAuto(auto.id)">Eliminar</button>
+      <button type="button" class="btn btn-info button-separation" (click)="modificarAuto(auto)">Modificar</button>
+    </td>
+    </tr>
+  </tbody>
+</table>
+

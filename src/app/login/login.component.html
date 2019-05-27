@@ -1,0 +1,15 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2>Iniciar Sesión</h2>
+
+    <!-- Login Form -->
+    <form  [formGroup]="formLogin">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario" formControlName="username">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="contraseña" formControlName="password">
+      <input type="submit" class="fadeIn fourth" value="Iniciar" (click)="sendLogin()">
+    </form>
+
+
+  </div>
+</div>
